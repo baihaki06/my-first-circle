@@ -11,7 +11,7 @@ jobs:
          docker run -d --name db baihaki/hellodocker:ujiversion
 
      # build the application image
-     - run: docker build -t baihaki/app:$CIRCLE_BRANCH .
+     - run: docker build -t baihaki/hellodocker:$CIRCLE_BRANCH .
 
      # deploy the image
-     - run: docker push baihaki/app:$CIRCLE_BRANCH
+     - run: docker push baihaki/hellodocker:$CIRCLE_BRANCH
