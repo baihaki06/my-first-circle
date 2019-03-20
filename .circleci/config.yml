@@ -1,15 +1,17 @@
 version: 2
 jobs:
-  build:
-    docker:
-      - image : circleci/node:4.8.2
-    steps:
-      - checkout
-      #- run : echo "a First Hello"
-      - run: |
-          docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-          echo "tes Login Docker Hub"
-         
+ build:
+   machine: true
+   steps:
+     - checkout
+     # start proprietary DB using private Docker image
+     # with credentials stored in the UI
+     - run: |
+         docker login -u $DOCKER_USER -p $DOCKER_PASS
+         docker run -d --name db company/proprietary-db:1.2.3
 
+     # build the application image
+     - run: docker build -t baihaki/app:$CIRCLE_BRANCH .
 
-
+     # deploy the image
+     - run: docker push baihaki/app:$CIRCLE_BRANCH
