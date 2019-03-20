@@ -5,5 +5,11 @@ jobs:
       - image : circleci/node:4.8.2
     steps:
       - checkout
-      - run : echo "a First Hello"
+      #- run : echo "a First Hello"
+      - run: |
+          docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+          echo "tes Login Docker Hub"
+         
+
+
 
