@@ -1,11 +1,10 @@
 version: 2
 jobs:
  build:
-   working_directory: ~/tmp
-   docker:
-     - image : circleci/node:4.8.2
+   machine: true
    steps:
      - checkout
+
      - run: |
          docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
          docker run -d --name db baihaki/hellodocker:ujiversion
