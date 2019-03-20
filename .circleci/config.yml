@@ -8,7 +8,7 @@ jobs:
      # with credentials stored in the UI
      - run: |
          docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-         docker run -d --name db baihaki/proprietary-db:1.2.3
+         docker run -d --name db baihaki/hellodocker:ujiversion
 
      # build the application image
      - run: docker build -t baihaki/app:$CIRCLE_BRANCH .
