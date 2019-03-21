@@ -8,6 +8,7 @@ jobs:
      - run: |
          docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
          docker run -d --name db baihaki/hellodocker:ujiversion
+         docker images 
 
      # build the application image
      #- run: docker build -t baihaki/hellodocker:$CIRCLE_BRANCH .
