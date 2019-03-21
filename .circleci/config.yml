@@ -5,10 +5,12 @@ jobs:
    steps:
      - checkout
 
-     - run: |
-         docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-         docker run -d --name db baihaki/hellodocker:ujiversion
-         docker images
+     - run: 
+         name : Docker Login and cek images
+         command : |
+          docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+          docker run -d --name db baihaki/hellodocker:ujiversion
+          docker images
      - run :
          name : Docker build and push
          command : |
