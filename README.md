@@ -1,5 +1,5 @@
 # my-first-circle
-  uji coba pertama membuat circleCI benjalan  
+  Uji coba pertama membuat circleCI benjalan  
   1. push github
   2. koneksi github ke circleci.com
   3. Login ke DockcerHub
