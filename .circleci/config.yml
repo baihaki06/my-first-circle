@@ -7,12 +7,12 @@ jobs:
 
      - run: |
          docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-         #docker run -d --name db baihaki/hellodocker:ujiversion
+         docker run -d --name db baihaki/hellodocker:ujiversion
          docker images
      - run :
          name : Docker build and push
          command : |
-          docker tag baihaki/hellodocker baihaki/hellodocker:${CIRCLE_SHA1}
+          docker tag baihaki/hellodocker:ujiversion baihaki/hellodocker:${CIRCLE_SHA1}
 
 
      # build the application image
