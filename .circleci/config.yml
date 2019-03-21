@@ -13,6 +13,7 @@ jobs:
          name : Docker build and push
          command : |
           docker tag baihaki/hellodocker:ujiversion baihaki/hellodocker:${CIRCLE_SHA1}
+          docker images
 
 
      # build the application image
